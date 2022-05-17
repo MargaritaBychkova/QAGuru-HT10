@@ -2,6 +2,7 @@ package guru.qa;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -11,15 +12,10 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 @Tag("demoqa")
-public class RegistrationFormTests {
-
-    @BeforeAll
-    static void setUp() {
-        Configuration.baseUrl = "https://demoqa.com";
-
-    }
+public class RegistrationFormTests extends TestBase {
 
     @Test
+    @DisplayName("Successful fill registration test")
     void fillFormTest() {
 
         step("Open the registration form", () -> {
